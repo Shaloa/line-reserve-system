@@ -7,7 +7,10 @@ const { Client } = require('@line/bot-sdk');
 const app = express();
 const port = 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://line-reserve-frontend.onrender.com',
+  credentials: true,
+}));
 
 const multer = require('multer'); 
 const upload = multer({ dest: 'uploads/' }); // 一時保存ディレクトリ
